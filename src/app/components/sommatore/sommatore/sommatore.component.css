@@ -1,0 +1,9 @@
+.cont{
+    display:flex ;
+    flex-direction: column;
+    max-width: 200px;
+    color: blue;
+    background-color: beige;
+    border: 2px solid;
+    padding: 5px;
+}

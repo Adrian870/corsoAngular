@@ -1,0 +1,10 @@
+<div *ngIf= "isShow; else isFalse">
+        caricando..
+</div>
+
+<ng-template #isFalse>
+    Hai nascosto il contenuto
+</ng-template>
+<button (click)="isShow = !isShow" >
+    Clicca per cambiare il contenuto
+</button>
