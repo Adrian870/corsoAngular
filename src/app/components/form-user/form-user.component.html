@@ -1,0 +1,22 @@
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="nome">Nome</label>
+        <input [(ngModel)]="utente.nome" type="text" name="nome" id="nome" required="">
+        <div *ngIf="form.submitted && !utente.nome">
+           <p>
+               il nome è obbligatorio!
+           </p> 
+        </div>
+        <label for="cognome">Cognome</label>
+        <input [(ngModel)]="utente.cognome" name="conome" id="conome" required="">
+        <label for="email">Email</label>
+        <input [(ngModel)]="utente.email" type="email" name="email" id="email" required email>
+        <div *ngIf="form.submitted && !utente.email">
+            Inserisci un' email valida!
+        </div>
+        <label for="password">Password</label>
+        <input [(ngModel)]="utente.password" type="password" name="password" id="password" required="">
+        <div *ngIf="form.submitted && !utente.password">Inserisci una password!</div>
+    </div>
+    <button type ="submit">Invia i dati</button>
+</form>

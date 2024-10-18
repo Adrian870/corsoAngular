@@ -1,0 +1,41 @@
+<h1>Reactive Form</h1>
+<form [formGroup]="myForm">
+  <div>
+    <label for="nome">Nome</label>
+    <input formControlName="nome" type="text" />
+  </div>
+  <div *ngIf="myForm.get('nome')?.invalid && myForm.get('nome')?.touched">
+    il nome è richiesto per invia i dati
+  </div>
+  <div>
+    <label for="cognome">Cognome</label>
+    <input formControlName="cognome" type="text" />
+  </div>
+  <div formArrayName="num">
+      <div *ngFor="let number of numeri.controls, let i = index">
+    <label for="numero">Numero</label>
+    <input [formControlName]="i" type="number">
+    </div>
+
+</div>
+<div>
+    <label for="email">Email</label>
+    <input formControlName="email" required type="email" />
+</div>
+<div *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched">
+    Inserisci una email valida
+</div>
+<div>
+    <label for="password">Password</label>
+    <input formControlName="password" type="password" name="password" />
+</div>
+<div
+*ngIf="myForm.get('password')?.invalid && myForm.get('password')?.touched"
+>
+La password deve essere minimo di 6 caratteri
+</div>
+<button (click)="sendData()" [disabled]="myForm.invalid">
+    Invia i tuoi dati
+</button>
+<button (click)="addNumero()">Aggiungi un'altro Numero di telefono</button>
+</form>

@@ -5,11 +5,20 @@ import { Esercizio1Component } from "./components/esercizio_1/esercizio1/eserciz
 import { ContatoreComponent } from './components/contatore/contatore/contatore.component';
 import { SommatoreComponent } from "./components/sommatore/sommatore/sommatore.component";
 import { NgifComponent } from "./components/ngif/ngif/ngif.component";
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { UserComponent } from './components/user-components/user/user.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { RouterModule } from '@angular/router';
+import { ContattiComponent } from './components/contatti/contatti/contatti.component';
+import { DetailComponent } from './components/detail/detail/detail.component';
+import { FormsModule } from '@angular/forms';
+import { FormUserComponent } from './components/form-user/form-user.component';
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HelloWorldComponent, Esercizio1Component, ContatoreComponent, SommatoreComponent, NgifComponent],
+  imports: [RouterOutlet, HelloWorldComponent, Esercizio1Component, ContatoreComponent, SommatoreComponent, NgifComponent, HttpClientModule, UserComponent, HomepageComponent,RouterModule, ContattiComponent, DetailComponent, ReactiveFormComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

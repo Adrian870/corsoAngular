@@ -1,0 +1,29 @@
+<h1>Reactive Form</h1>
+<form [formGroup]="myForm">
+  <div>
+    <label for="username">Username</label>
+    <input formControlName="username" type="text" />
+  </div>
+  <div *ngIf="myForm.get('username')?.invalid && myForm.get('username')?.touched">
+    il nome è richiesto per invia i dati
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input formControlName="email" required type="email" />
+  </div>
+  <div *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched">
+    Inserisci una email valida
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input formControlName="password" type="password" name="password" />
+  </div>
+  <div
+    *ngIf="myForm.get('password')?.invalid && myForm.get('password')?.touched"
+  >
+    La password deve essere minimo di 6 caratteri
+  </div>
+  <button (click)="sendData()" [disabled]="myForm.invalid">
+    Invia i tuoi dati
+  </button>
+</form>
